@@ -7,7 +7,7 @@ app.factory('UserService',function($http)
 
     userservice.registerUser=function(user)
     {
-        return $http.post("http:localhost:8081/backend_project2/registration",user)
+        return $http.post("http://localhost:8181/backend-project2/registration",user)
     }
 return userService;
 })
