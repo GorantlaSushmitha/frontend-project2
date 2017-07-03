@@ -4,7 +4,12 @@
 app.factory('JobService',function($http){
 	var jobService={}
 	jobService.saveJob=function(job){
-		return $http.post()
+		return $http.post("http://localhost:8181/backend-project2/savejob",job)
 	}
-	return service
+	
+	jobService.getAllJobs=function(){
+		return $http.get("http://localhost:8181/backend-project2/getalljobs")
+	}
+	
+	return jobService;
 })
