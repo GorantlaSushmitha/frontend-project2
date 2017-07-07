@@ -20,6 +20,22 @@ app.config(function($routeProvider,$locationProvider){
 		templateUrl:'views/jobtitle.html',
 		controller:'JobController'
 	})
+	.when('/saveblogpost',{
+		templateUrl:'views/blogpostform.html',
+		controller:'BlogPostController'
+	})
+	.when('/getallblogs',{
+		templateUrl:'views/blogslist.html',
+		controller:'BlogPostController'
+	})
+	.when('/getBlogForApproval/:id',{
+		templateUrl:'views/approvalform.html',
+		controller:'BlogDetailController'
+	})
+	.when('/getBlogDetail/:id',{
+		templateUrl:'views/blogdetail.html',
+		controller:'BlogDetailController'
+	})
 	.otherwise({
 		templateUrl:'views/home.html'
 	})
