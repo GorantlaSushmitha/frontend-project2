@@ -19,20 +19,28 @@
 		    <div class="col-md-4 col-md-offset-4">
 		    	<div class="panel panel-default">
 					<div class="panel-heading">
-				    	<h3 class="panel-title" align="center"><i>Please Register</i></h3>
+				    	<h3 class="panel-title" align="center"><i>Pending Request</i></h3>
 				 	</div>
 
-<div class="container">
-<table class="table">
+<formset>
 
-<tr ng-repeat="pr in listOfPendingRequests">
-<td>{{pr.fromId}}</td> <td><a href="" ng-click="updatePendingRequest(pr.fromId,'A')" class="btn btn-default">Accept</a></td>
+<div ng-repeat="pr in listOfPendingRequests">
+<td>{{pr.fromId}}</td>
+
+<td   ng-hide="currentUser.username==f.fromId">
+<img src="http://localhost:8181/backend-project2/getimage/{{f.fromId}}" alt="Image Not Available" height="50" width="50px">
+</td>
+
+<td ng-hide="currentUser.username==f.toId">
+<img src="http://localhost:8181/backend-project2/getimage/{{f.toId}}" alt="Image Not Available" height="50" width="50px">
+</td>
+
+<td><a href="" ng-click="updatePendingRequest(pr.fromId,'A')" class="btn btn-default">Accept</a></td>
 
 <td><a href="" ng-click="updatePendingRequest(pr.fromId,'D')" class="btn btn-default">Reject</a></td>
-</tr>
-
-</table>
 </div>
+
+</formset>
 </div>
 </div>
 </div>

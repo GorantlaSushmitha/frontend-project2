@@ -13,7 +13,7 @@
  <body><br><br><br><br><br><br>
 	<div class="container" align="justify">
 		<div class="row vertical-offset-100">
-		    <div class="col-md-4 col-md-offset-4">
+		    <div class="col-md-5 col-md-offset-4">
 		    	<div class="panel panel-default">
 					<div class="panel-heading">
 				    	<h3 class="panel-title" align="center"><i>Please sign in</i></h3>
@@ -22,11 +22,15 @@
 						{{message}}
 						{{error.message}}
 					</div>	
-					<form><br>
-						<div align="center">Enter Username<input type="text" ng-model="user.username"><br></div><br>
-						<div align="center">Enter Password<input type="password" ng-model="user.password"><br></div><br>
-						<div align="center"><input type="submit" value="login" ng-click="login()"></div>
-					</form>
+					<fieldset><br>
+						<div class="form-group" align="center">
+							<label class="col-md-4 control-label"><i>Enter Username</i></label><input type="text" ng-model="user.username"><br>
+						</div>
+						<div class="form-group" align="center">
+							<label class="col-md-4 control-label"><i>Enter Password</i></label><input type="password" ng-model="user.password"><br>
+						</div>
+						<div class="form-group" align="center"><input type="submit" value="login" ng-click="login()"></div>
+					</fieldset>
 				</div>
 			</div>
 		</div>

@@ -1,17 +1,41 @@
-<div>
-Search <input ng-model="jobTitle">
-<table class="table">
+<style>
+ body 
+ 	{
+        background-color: #444;
+        background: url(https://thumbs.dreamstime.com/b/vintage-paper-texture-light-background-brown-34208825.jpg);
+    }
+.vertical-offset-100{
+    padding-top:40px;
+}
+</style>
+<html>
+<body>
+<div align="center">
+Search By Title <input ng-model="searchText.title">
+
+<div class="container" align="justify">
+		<div class="row vertical-offset-100">
+		    <div class="col-md-6 col-md-offset-3">
+		    	<div class="panel panel-default">
+					<div class="panel-heading">
+				    	<h3 class="panel-title" align="center"><i>Job Title</i></h3>
+				 	</div>
+				 	<table class="table" style="border-color: black;">
 <thead>
 <tr>
 <th>Job Title</th><th>Posted on</th>
 </tr>
 </thead>
 <tbody>
-<tr ng-repeat="job in jobs | filter:jobTitle">
-<td><a href="" ng-click="getJobDetail(job.id)"></a>{{job.jobTitle}}</td><td>{{job.postedOn | date:'yyyy:MM;dd'}}</td>
+<tr ng-repeat="j in jobs | filter:searchText">
+<td><a href="" ng-click="getJobDetail(j.id)"></a>{{j.jobTitle}}</td><td>{{j.postedOn | date:'yyyy:MM:dd'}}</td>
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+</div>
+</div>
 <div ng-show="showdetails">
 <b>Job Details</b>
 <b>Job title : </b>{{job.jobTitle}}<br>
@@ -23,3 +47,5 @@ Search <input ng-model="jobTitle">
 <b>company Name :</b> {{job.companyName}}<br>
 </div>
 </div>
+</body>
+</html>
