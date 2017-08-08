@@ -1,3 +1,15 @@
+<style>
+ body 
+ 	{
+        background-color: #444;
+        background: url(https://thumbs.dreamstime.com/b/vintage-paper-texture-light-background-brown-34208825.jpg);
+    }
+.vertical-offset-100{
+    padding-top:10px;
+}
+</style>
+<html>
+<body>
 <div class="row" align="center">
 <div>
 <div class="panel panel-default">
@@ -11,12 +23,14 @@
 </div>
 </div></div>
 </div>
-<form>
+<formset>
+<div align="center">
+
 <textarea rows="3" cols="20" ng-model="blogComment.body"></textarea><br>
 
 <button ng-click="addComment()" value="Post Comment">Post comment</button>
-
-</form>
+</div>
+</formset>
 
 <div class="row" align="center">
 <a href="" ng-click="getBlogComments(blogPost.id)">Show Blog Comments</a>
@@ -30,5 +44,5 @@
 </li>
 </ul>
 </div>
-</div>
-</div>
+</body>
+</html>

@@ -5,38 +5,47 @@
         background: url(https://thumbs.dreamstime.com/b/vintage-paper-texture-light-background-brown-34208825.jpg);
     }
 .vertical-offset-100{
-    padding-top:40px;
+    padding-top:10px;
 }
 </style>
-<html>
-<body>
-<div align="center">
-Search By Title <input ng-model="searchText.title">
 
-<div class="container" align="justify">
-		<div class="row vertical-offset-100">
-		    <div class="col-md-6 col-md-offset-3">
-		    	<div class="panel panel-default">
-					<div class="panel-heading">
-				    	<h3 class="panel-title" align="center"><i>Job Title</i></h3>
-				 	</div>
-				 	<table class="table" style="border-color: black;">
+<div>
+Search By Title<input ng-model="searchText.jobTitle">
+
+<!-- Search <input ng-model="jobTitle"> -->
+<table class="table">
 <thead>
 <tr>
 <th>Job Title</th><th>Posted on</th>
 </tr>
 </thead>
 <tbody>
-<tr ng-repeat="j in jobs | filter:searchText">
-<td><a href="" ng-click="getJobDetail(j.id)"></a>{{j.jobTitle}}</td><td>{{j.postedOn | date:'yyyy:MM:dd'}}</td>
+<tr ng-repeat="job in jobs | filter:searchText">
+<div ng-show="showdetails">
+<div class="container" align="justify">
+		<div class="row vertical-offset-100">
+		    <div class="col-md-6 col-md-offset-3">
+		    	<div class="panel panel-default">
+					<div class="panel-heading">
+				    	<h3 class="panel-title" align="center"><i></i></h3>
+				 	</div>
+				 	<td><a href="" ng-click="getJobDetail(job.id)">{{job.jobTitle}}</a></td><td>{{job.postedOn | date:'yyyy:MM;dd'}}</td>
+			</div></div></div></div></div>
+
+
 </tr>
 </tbody>
 </table>
 </div>
-</div>
-</div>
-</div>
 <div ng-show="showdetails">
+<div class="container" align="justify">
+		<div class="row vertical-offset-100">
+		    <div class="col-md-6 col-md-offset-3">
+		    	<div class="panel panel-default">
+					<div class="panel-heading">
+				    	<h3 class="panel-title" align="center"><i>Job Details</i></h3>
+				 	</div>
+			
 <b>Job Details</b>
 <b>Job title : </b>{{job.jobTitle}}<br>
 <b>Job Description :</b> {{job.jobDescription}}<br>
@@ -46,6 +55,4 @@ Search By Title <input ng-model="searchText.title">
 <b>Salary :</b> {{job.salary}}<br>
 <b>company Name :</b> {{job.companyName}}<br>
 </div>
-</div>
-</body>
-</html>
+</div></div></div></div>

@@ -16,30 +16,23 @@
 <body data-ng-controller='UserController'>
 <div class="container" align="justify">
 		<div class="row vertical-offset-100">
-		    <div class="col-md-4 col-md-offset-4">
+		    <div class="col-md-6 col-md-offset-4">
 		    	<div class="panel panel-default">
 					<div class="panel-heading">
-				    	<h3 class="panel-title" align="center"><i>Please Register</i></h3>
+				    	<h3 class="panel-title" align="center"><i>Blog Post</i></h3>
 				 	</div>
 {{message}}
-<form>
-<table>
-
-<tr>
-<td>Enter Blog Title</td>
-<td><input ng-model="blogPost.title"></td>
-</tr>
-
-<tr>
-<td>Enter Blog Description</td>
-<td><textarea ng-model="blogPost.description"></textarea></td>
-</tr>
-<td>
-<button class="btn btn-default" ng-click="saveBlogPost()">Post Blog</button>
-</td>
-
-</table>
-</form>
+<formset><br>
+<div class="form-group" align="center">
+							<label class="col-md-4 control-label"><i>Enter Blog Title</i></label><input ng-model="blogPost.title">
+</div>
+<div class="form-group" align="center">
+							<label class="col-md-4 control-label"><i>Enter Blog Description</i></label><textarea ng-model="blogPost.description"></textarea>
+</div>
+<div class="form-group" align="center">
+							<button class="btn btn-default" ng-click="saveBlogPost()" >Post Blog</button>
+</div>
+</formset>
 </div>
 </div>
 </div>

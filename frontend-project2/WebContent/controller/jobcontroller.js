@@ -25,15 +25,13 @@ app.controller('JobController',function($scope,$location,JobService)
 	}
 	
 	$scope.getJobDetail=function(id){
-		$scope.showdetails=true;
-		JodService.getJobById(id).then(function(response){
-			$scope.job=response.data;
-			console.log(response.data)
-            console.log(response.status)
-		},function(response){
-			console.log(response.status);
-		})
-	}
+        $scope.showdetails=true;
+        JobService.getJobById(id).then(function(response){
+            $scope.job=response.data;
+        },function(response){
+            console.log(response.status);
+        })
+    }
+    
 	
-	getAllJobs();
 })
